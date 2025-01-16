@@ -1,4 +1,7 @@
 package com.example.receptboken.repositories;
 
-public class RecipeRepository {
+import com.example.receptboken.models.Recipe;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 }
