@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 @Table(name = "recipes")
 public class Recipe {
@@ -25,7 +27,7 @@ public class Recipe {
     private String instructions;
 
     @Column(length = 500)
-    private String ingredients;
+    private List<String> ingredients;
 
     private int cookingTime;
 
@@ -67,14 +69,6 @@ public class Recipe {
         this.instructions = instructions;
     }
 
-    public String getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
-    }
-
     public String getDifficulty() {
         return difficulty;
     }
@@ -89,5 +83,13 @@ public class Recipe {
 
     public void setCookingTime(int cookingTime) {
         this.cookingTime = cookingTime;
+    }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
     }
 }
